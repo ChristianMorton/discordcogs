@@ -27,14 +27,13 @@ class Hunting(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.config = Config.get_conf(self, 2784481002, force_registration=True)
+        self.config = Config.get_conf(self, 1007372182529245194, force_registration=True)
 
         self.animals = {
             "dove": ":dove: **_Coo!_**",
             "penguin": ":penguin: **_Noot!_**",
             "chicken": ":chicken: **_Bah-gawk!_**",
             "duck": ":duck: **_Quack!_**",
-            "goose": ":goose: **_Honk!_**",
         }
         self.in_game = []
         self.paused_games = []
@@ -288,7 +287,6 @@ class Hunting(commands.Cog):
         kill_list = []
         if not score:
             message = "Please shoot something before you can brag about it."
-
         for animal in score.items():
             total = total + animal[1]
             if animal[1] == 1 or animal[0][-1] == "s":
@@ -492,8 +490,6 @@ class Hunting(commands.Cog):
             if reward:
                 cur_name = await bank.get_currency_name(guild)
                 msg = f"{author.display_name} shot a {animal}{bangtime} and earned {reward} {cur_name}!"
-            elif user_data["fastest_shot"] > time_for_bang:
-                msg = f"{author.display_name} shot a {animal}{bangtime} and earned {reward} {cur_name}! They beat their previous shot speed record!"
             else:
                 msg = f"{author.display_name} shot a {animal}{bangtime}!"
         else:
