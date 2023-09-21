@@ -4,7 +4,6 @@ import discord
 from discord.ext import commands
 from redbot.core import Config, bank, commands, checks
 from redbot.core.utils import AsyncIter
-from redbot.core.errors import BalanceTooHigh
 from typing import Literal
 
 class FancyDict(dict):
@@ -27,7 +26,7 @@ class GoonOff(commands.Cog):
 
         guild_defaults = {
             "Wait": 20,
-            "Chambers": 6,
+            "Strokes": 6,
         }
         
         member_defaults = {"Wins": 0, "Losses": 0, "Total_Winnings": 0 }
